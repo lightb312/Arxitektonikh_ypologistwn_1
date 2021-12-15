@@ -107,11 +107,11 @@ SimpleTimingCpu: sim_seconds 0.000047 # Number of seconds simulated from folder 
 b) Αλλάζουμε την συχνότητα: 
 
     ./build/ARM/gem5.opt -d program_result_minor_7 configs/example/se.py --cpu-type=MinorCPU --sys-clock=700000000 --caches -c myprog_arm
-MinorCPU: sim_seconds 0.000045 # Number of seconds simulated from folder stats_minor_500
+MinorCPU: sim_seconds 0.000045 # Number of seconds simulated from folder stats_minor_7
 
     ./build/ARM/gem5.opt -d program_result_timingsimple_7 configs/example/se.py --cpu-type=TimingSimpleCPU --sys-clock=700000000 --caches -c myprog_arm
 
-TimingSimpleCPU: sim_seconds 0.000051 # Number of seconds simulated from folder timingsimple
+TimingSimpleCPU: sim_seconds 0.000051 # Number of seconds simulated from folder stats_simpletiming_7
 
 !Παρατηρούμε ότι ο χρόνος εκτέλεσης και στους δυο τύπους CPU αυξάνεται , κάτι που περιμέναμε αφού μειώσαμε την συχνότητα.
 
@@ -120,11 +120,11 @@ c) Τέλος αλλάξαμε το τύπο της μνήμης σε  DDR4_2400
 
     ./build/ARM/gem5.opt -d program_result_minor_DDR4 configs/example/se.py --cpu-type=MinorCPU --mem-type=DDR4_2400_8x8 --caches -c myprog_arm
 
-MinorCPU: sim_seconds 0.000040 # Number of seconds simulated from folder minor
+MinorCPU: sim_seconds 0.000040 # Number of seconds simulated from folder stats_minor_DDR4
 
     ./build/ARM/gem5.opt -d program_result_timingsimple_DDR3 configs/example/se.py --cpu-type=TimingSimpleCPU --mem-type=DDR4_2400_8x8 --caches -c myprog_arm
 
-TimingSimpleCPU: sim_seconds 0.000046 # Number of seconds simulated from folder timingsimple
+TimingSimpleCPU: sim_seconds 0.000046 # Number of seconds simulated from folder stats_simpletiming_DDR4
 
 ! Βλέπουμε ότι και στις 2 περιπτώσεις ο χρόνος εκτέλεσης μειώνεται. Ήταν και αυτό κάτι που περιμέναμε καθώς αρχικά χρησιμοποιούσαμε DDR3_1600_8x8 (1.6 x 8 x 8 / 8 = 12.8GBps) και μετά (2.4 x 8 x 8⁄8 = 19.2 GBps).
  
